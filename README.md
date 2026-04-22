@@ -69,5 +69,5 @@ npm start     #
 2. **大文字・小文字の区別:** Javaのクラス名とファイル名は、大文字・小文字が一致している必要があります。(例: `WebConfig.java`)
 3. **.gitignore 管理:** `node_modules`, `.idea`, `build/`などのビルド成果物や設定ファイルが GitHubにpushされないよう注意してください。
 
-4. ---
+---
 
