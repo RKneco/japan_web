@@ -1,40 +1,40 @@
-# 📑 Japan Web Project (Full-Stack)
+# 📑 日本ウェブプロジェクト (フルスタック)
 
-이 프로젝트는 **Spring Boot**와 **React**를 통합 관리하는 멀티 모듈 저장소입니다.
+このプロジェクトは、**Spring Boot** と **React** を統合管理するマルチモジュールレポジトリです。
 
-## 📂 프로젝트 구조
+## 📂 プロジェクト構成
 
 ```text
 japan_web (Root)
  ├── backend/          # Spring Boot (Java 17, Gradle)
  ├── frontend/         # React (JavaScript)
- └── .gitignore        # IDE 설정 및 라이브러리 제외 관리
+ └── .gitignore        # IDE 設定およびライブラリ除外管理
 
 ```
 
-## 🛠️ 초기 개발 환경 세팅 (공통)
+## 🛠️ 初期開発環境の設定 (共通)
 
-### 1. IntelliJ 프로젝트 연결
+### 1. IntelliJ プロジェクトの連携
 
-* **Backend:** `backend/build.gradle` 파일을 우클릭하여 **'Add as Gradle Project'**를 선택합니다.
-* **VCS 설정:** `Settings` > `Version Control` > `Directory Mappings`에서 하위 폴더의 개별 매핑을 모두 삭제하고, 루트(`japan_web`)만 등록합니다.
+* **Backend:** `backend/build.gradle` ファイルを右クリックし、**'Add as Gradle Project'**を選択します。
+* **VCS 設定:** `Settings` > `Version Control` > `Directory Mappings`にて、下位フォルダの個別マッピングをすべて削除し、ルート (`japan_web`)のみを登録します。
 
-### 2. 브랜치 전략
+### 2. ブランチ戦略
 
-* **브랜치 명칭:** 기본 개발 브랜치는 `dev`입니다.
-* **작업 흐름:** 각자 기능별 브랜치(`feat/기능`)를 생성하여 작업 후, GitHub에서 `dev` 브랜치로 **Pull Request(PR)**를 생성합니다.
-* **브랜치 보호:** `dev` 브랜치는 직접 `push`가 제한되며, 팀원의 승인이 있어야 `merge` 가능합니다.
+* **ブランチ名:** 基本の開発ブランチは `dev`です。
+* **作業フロー:** 各自、機能別のブランチ(`feat/機能名`)を作成して作業を行い、GitHub上で `dev` ブランチに対して **Pull Request(PR)**を作成します。
+* **ブランチ保護:** `dev` ブランチへの直接 `Push`は制限されており、チームメンバーの承認を経て `Merge`が可能となります。
 
 ---
 
 ## 🖥️ Backend (Spring Boot)
 
-### 주요 설정
+### 主要設定
 
-* **CORS 허용:** 프론트엔드(Port 3000)와의 통신을 위해 `WebConfig` 클래스에서 접근을 허용하고 있습니다.
-* **API 확인:** `HelloController` 등을 통해 백엔드 정상 작동 여부를 확인할 수 있습니다.
+* **CORS 許可:** フロントエンド(Port 3000)との通信のため、`WebConfig` クラスにてアクセスを許可しています。
+* **API 確認:** `HelloController` などを通じて、バックエンドの正常動作を確認できます。
 
-### 실행 방법
+### 実行方法
 
 ```bash
 cd backend
@@ -46,28 +46,28 @@ cd backend
 
 ## 🌐 Frontend (React)
 
-### 주요 설정
+### 主要設定
 
-* **환경 변수:** `frontend/.env` 파일에 백엔드 API 주소가 설정되어 있습니다.
-* **API 통신:** HTTP 통신을 위해 `axios` 라이브러리를 사용합니다.
-* **Proxy:** `package.json`에 `http://localhost:8080` 프록시 설정이 되어 있어 CORS 에러를 방지합니다.
+* **環境変数:** `frontend/.env` ファイルにバックエンドの API アドレスが設定されています。
+* **API 通信:** HTTP 通信のために `axios` ライブラりを使用しています。
+* **Proxy:** `package.json`に `http://localhost:8080`のプロキシ設定がされており、CORS エラーを防止します。
 
-### 실행 방법
+### 実行方法
 
 ```bash
 cd frontend
-npm install   # 최초 1회 실행
+npm install   # 初回のみ実行
 npm start     #
 
 ```
 
 ---
 
-## ⚠️ 주의사항 (필독)
+## ⚠️ 注意事項 (必読)
 
-1. **중첩 .git 삭제:** 리액트 설치 시 생성되는 `frontend/.git` 폴더는 이미 삭제되었습니다. 향후 재설치 시에도 내부 `.git` 폴더가 생성되지 않도록 주의해야 합니다.
-2. **대소문자 구분:** Java 클래스명과 파일명은 대소문자가 일치해야 합니다. (예: `WebConfig.java`)
-3. **.gitignore 관리:** `node_modules`, `.idea`, `build/` 등 빌드 결과물이나 설정 파일이 깃허브에 올라가지 않도록 주의합니다.
+1. **入れ子の .git 削除:** Reactのインストール時に生成される `frontend/.git` フォルダは削除済みです。今後、再インストールする際も内部に `.git` フォルダが生成されないよう注意してください。
+2. **大文字・小文字の区別:** Javaのクラス名とファイル名は、大文字・小文字が一致している必要があります。(例: `WebConfig.java`)
+3. **.gitignore 管理:** `node_modules`, `.idea`, `build/`などのビルド成果物や設定ファイルが GitHubにpushされないよう注意してください。
 
----
+4. ---
 
