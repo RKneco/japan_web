@@ -49,7 +49,7 @@ cd backend
 ### 主要設定
 
 * **環境変数:** `frontend/.env` ファイルにバックエンドの API アドレスが設定されています。
-* **API 通信:** HTTP 通信のために `axios` ライブラりを使用しています。
+* **API 通信:** HTTP 通信のために `axios` ライブラリを使用しています。
 * **Proxy:** `package.json`に `http://localhost:8080`のプロキシ設定がされており、CORS エラーを防止します。
 
 ### 実行方法
